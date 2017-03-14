@@ -1,0 +1,10 @@
+.cityNav{
+    list-style: none;
+}
+.cityNav li{
+    display: inline-block;
+    background: pink;
+    padding: 20px;
+    margin: 10px;
+    cursor: pointer;
+}

@@ -1,0 +1,7 @@
+.nav-bar{
+    background: red;
+}
+.nav-bar ul li{
+    display: inline-block;
+    margin-right: 15px;
+}
