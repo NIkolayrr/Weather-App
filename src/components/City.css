@@ -1,10 +1,40 @@
+.cityContainer{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+}
+.cityView{
+    padding: 20px;
+    flex: 2 0 0;
+}
+.cityView h1{
+    text-transform: capitalize;
+    color: #0090c3;
+}
+.cityView .temprature{
+    font-size: 1.5rem;
+    align-items: center;
+    display: flex;
+}
+.cityView .degrees{
+    margin: 0 20px 0 0;
+}
+.cityView .icon{
+    margin: 0;
+    font-size: 4rem;
+}
+.cityChoice{
+    margin-right: 20px;
+    padding: 20px;
+    flex: 1 0 0;
+}
 .cityNav{
     list-style: none;
 }
 .cityNav li{
     display: inline-block;
-    background: pink;
-    padding: 20px;
-    margin: 10px;
+    border: 2px solid black;
     cursor: pointer;
+    padding: 10px;
+    margin: 5px;
 }
