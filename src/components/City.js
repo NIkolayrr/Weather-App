@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import ViewCity from '../Views/ViewCity';
+import _makeRequest from '../Requester';
 import './City.css';
-import $ from 'jquery';
 
 class City extends Component {
     constructor(props) {
@@ -9,6 +9,7 @@ class City extends Component {
         this.state = {data: 'New Data',city: 'New City'};
         this._handleClick = this._handleClick.bind(this);
         this._handleRequest = this._handleRequest.bind(this);
+        this._handleError = this._handleError.bind(this);
     }
 
     _handleClick(event) {
@@ -20,23 +21,19 @@ class City extends Component {
            city: city
         });
 
-        $.ajax({
-            method: 'GET',
-            url: "https://api.darksky.net/forecast/75a865c6e798d8b985688c027348ba0d/" + coordinates.lat + "," + coordinates.lon,
-            dataType: 'jsonp'
-        })
+        _makeRequest(coordinates.lat,coordinates.lon)
             .then(this._handleRequest)
-            .catch(function (error) {
-                console.log(error);
-            })
+            .catch(this._handleError);
     }
-
     _handleRequest(data) {
         let currentWeather = data["currently"];
-        console.log(data);
+
         this.setState({
             data: currentWeather
         });
+    }
+    _handleError(error){
+        console.log(error);
     }
 
     render() {
