@@ -7,6 +7,7 @@ class ViewCity extends Component {
 
     render() {
         const currentWeather = this.props.data;
+        console.log(currentWeather);
         const Farenheit = currentWeather.apparentTemperature;
         const icons = {
             "clear-day": "B",
@@ -22,11 +23,14 @@ class ViewCity extends Component {
         };
 
         return (
-            <div>
+            <div className="cityView">
                 <h1>{this.props.city}</h1>
-                <p>{Math.round((Farenheit - 32) * 5 / 9)} &#8451;</p>
+                <div className="temprature">
+                    <p className="degrees">{Math.round((Farenheit - 32) * 5 / 9)} &#8451;</p>
+                    <p className="icon">{icons[currentWeather.icon]}</p>
+                </div>
+                <small>wind speed: {currentWeather.windSpeed} km/h</small>
                 <p>{currentWeather.summary}</p>
-                <p className="icon">{icons[currentWeather.icon]}</p>
             </div>
         )
     }
