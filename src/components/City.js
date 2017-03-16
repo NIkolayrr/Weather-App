@@ -18,7 +18,7 @@ class City extends Component {
         let coordinates = this.props.cities[city];
 
         this.setState({
-           city: city
+            city: city
         });
 
         _makeRequest(coordinates.lat,coordinates.lon)
@@ -38,14 +38,15 @@ class City extends Component {
 
     render() {
         const {cities} = this.props;
-        const cityNames = Object.keys(cities);
+        const cityNames = Object.keys(cities).sort(function(a, b) {
+            return a.localeCompare(b);
+        });
         const citiesOptions = [];
         cityNames.map((city, index) => {
             citiesOptions.push(<li onClick={this._handleClick} value={city} key={index}>{city}</li>);
         });
         return (
             <div>
-                <h1>Choose A City</h1>
                 <ul className="cityNav">
                     {citiesOptions}
                 </ul>
