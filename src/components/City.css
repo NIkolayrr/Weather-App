@@ -1,40 +1,84 @@
-.cityContainer{
+.cityContainer {
     box-sizing: border-box;
     display: flex;
-    justify-content: center;
+    align-items: center;
 }
-.cityView{
+
+.cityContainer .btn {
+    border: none;
+    background: #00bfff;
+    color: white;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: all .3s ease;
+}
+.cityContainer .btn:hover{
+    background: #0090c3;
+}
+
+.cityView {
+    display: none;
     padding: 20px;
     flex: 2 0 0;
+    justify-content: center;
+    text-align: center;
 }
-.cityView h1{
+
+.cityView h1 {
     text-transform: capitalize;
     color: #0090c3;
 }
-.cityView .temprature{
+
+.cityView .temprature {
     font-size: 1.5rem;
-    align-items: center;
     display: flex;
+    justify-content: center;
+    vertical-align: top;
+    margin: 15px 0;
 }
-.cityView .degrees{
-    margin: 0 20px 0 0;
+
+.cityView .degrees {
+    margin-right: 20px;
 }
-.cityView .icon{
+
+.cityView .icon {
     margin: 0;
     font-size: 4rem;
 }
-.cityChoice{
+
+.cityChoice {
     margin-right: 20px;
     padding: 20px;
     flex: 1 0 0;
 }
-.cityNav{
-    list-style: none;
+
+.cityChoice > h1 {
+    color: #0090c3;
 }
-.cityNav li{
+
+.cityNav {
+    list-style: none;
+    max-width: 300px;
+}
+
+.cityNav li {
     display: inline-block;
-    border: 2px solid black;
+    background: #eeeeee;
+    color: darkgray;
+    text-align: center;
+    border-radius: 10px;
     cursor: pointer;
-    padding: 10px;
+    text-transform: capitalize;
+    padding: 10px 20px;
     margin: 5px;
+    transition: all .3s ease;
+}
+.cityNav li:hover{
+    color: black;
+}
+@media (max-width: 600px) {
+    .cityContainer {
+        flex-wrap: wrap;
+    }
 }

@@ -19,11 +19,12 @@
     display: block;
     padding: 1em;
     color: white;
+    transition: all .5s ease;
 }
 .site-header nav ul a:hover{
     background: #0090c3;
 }
 
 .active{
-    color: black;
+    background: #0090c3;
 }
