@@ -1,13 +1,8 @@
 import React, {Component} from 'react';
 
 class ViewCity extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         const currentWeather = this.props.data;
-        console.log(currentWeather);
         const Farenheit = currentWeather.apparentTemperature;
         const icons = {
             "clear-day": "B",
