@@ -2,11 +2,12 @@ import React, {Component} from 'react';
 import ViewCity from '../Views/ViewCity';
 import _makeRequest from '../Requester';
 import './City.css';
+import $ from 'jquery';
 
 class City extends Component {
     constructor(props) {
         super(props);
-        this.state = {data: 'New Data', city: 'New City'};
+        this.state = {data: '', city: ''};
         this._handleClick = this._handleClick.bind(this);
         this._handleRequest = this._handleRequest.bind(this);
         this._handleError = this._handleError.bind(this);
@@ -30,6 +31,8 @@ class City extends Component {
 
     _handleRequest(data) {
         let currentWeather = data["currently"];
+
+        $('.cityView').css('display','block');
 
         this.setState({
             data: currentWeather
@@ -72,7 +75,7 @@ class City extends Component {
             <div className="cityContainer">
                 <div className="cityChoice">
                     <h1>Choose a city</h1>
-                    <button onClick={this._getCurrentLocation}>Current Location</button>
+                    <button className="btn" onClick={this._getCurrentLocation}>Current Location</button>
                     <ul className="cityNav">
                         {citiesOptions}
                     </ul>

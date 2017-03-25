@@ -8,7 +8,7 @@ class Navigation extends Component {
             <header className="site-header">
                 <nav>
                     <ul>
-                        <li className="logo"><Link to="/home" activeClassName="active">Weather-App</Link></li>
+                        <li className="logo"><Link to="/home">Weather-App</Link></li>
                         <li><Link to="/home" activeClassName="active">Home</Link></li>
                         <li><Link to="/about" activeClassName="active">About</Link></li>
                     </ul>
