@@ -1,10 +1,84 @@
-.cityNav{
-    list-style: none;
+.cityContainer {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
 }
-.cityNav li{
-    display: inline-block;
-    background: pink;
-    padding: 20px;
-    margin: 10px;
+
+.cityContainer .btn {
+    border: none;
+    background: #00bfff;
+    color: white;
     cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: all .3s ease;
+}
+.cityContainer .btn:hover{
+    background: #0090c3;
+}
+
+.cityView {
+    display: none;
+    padding: 20px;
+    flex: 2 0 0;
+    justify-content: center;
+    text-align: center;
+}
+
+.cityView h1 {
+    text-transform: capitalize;
+    color: #0090c3;
+}
+
+.cityView .temprature {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    vertical-align: top;
+    margin: 15px 0;
+}
+
+.cityView .degrees {
+    margin-right: 20px;
+}
+
+.cityView .icon {
+    margin: 0;
+    font-size: 4rem;
+}
+
+.cityChoice {
+    margin-right: 20px;
+    padding: 20px;
+    flex: 1 0 0;
+}
+
+.cityChoice > h1 {
+    color: #0090c3;
+}
+
+.cityNav {
+    list-style: none;
+    max-width: 300px;
+}
+
+.cityNav li {
+    display: inline-block;
+    background: #eeeeee;
+    color: darkgray;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    text-transform: capitalize;
+    padding: 10px 20px;
+    margin: 5px;
+    transition: all .3s ease;
+}
+.cityNav li:hover{
+    color: black;
+}
+@media (max-width: 600px) {
+    .cityContainer {
+        flex-wrap: wrap;
+    }
 }
